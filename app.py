@@ -80,7 +80,10 @@ def main():
     if st.button("Predict"):
         try:
             pred= get_movie_recommendation(Title) 
-            st.dataframe(pred)
+            if(len(Title)>0):
+                st.dataframe(pred)
+            else:
+                st.text("Write Movie Name")
         except:
             st.text("Error in Movie Name")
 
